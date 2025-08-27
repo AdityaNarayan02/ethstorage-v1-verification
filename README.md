@@ -13,7 +13,7 @@ You don’t need prior zk-SNARK knowledge — just follow along!
 ```bash
 sudo apt update && sudo apt install nodejs npm wget git -y
 npm install -g snarkjs@0.7.5
-npm install -g circom@2.2.2
+npm install -g circom2
 ```
 ### 2. Clone the Circuits Repository
 ```bash
