@@ -12,7 +12,7 @@ You don’t need prior zk-SNARK knowledge — just follow along!
 ### 1. Install Tools
 ```bash
 sudo apt update && sudo apt install nodejs npm wget git -y
-npm install -g snarkjs@0.7.5
+sudo npm install -g snarkjs@0.7.5
 ```
 ```
 wget https://github.com/iden3/circom/releases/download/v2.2.2/circom-linux-amd64 -O circom
