@@ -21,3 +21,20 @@ git clone https://github.com/ethstorage/zk-decoder.git
 cd zk-decoder/circom/circuits
 npm install
 ```
+### 3. Download the script
+```
+wget https://raw.githubusercontent.com/yourname/zkey-verifier/main/verify.sh
+chmod +x verify.sh
+```
+### 4. Run the verification Script
+```
+./verify.sh
+```
+### 5. ✅ Expected Results
+At the end, you should see:
+```
+snarkJS: ZKey Ok!
+```
+for both circuits.
+
+That means you have independently verified the EthStorage Trusted Setup 🎉
