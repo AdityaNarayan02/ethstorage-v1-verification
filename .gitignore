@@ -1,0 +1,21 @@
+# Ignore ZKey and other large ceremony files
+*.zkey
+*.ptau
+*.r1cs
+*.wtns
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Shell history / temp
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Node modules (if you later add snarkjs locally)
+node_modules/
