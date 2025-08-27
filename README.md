@@ -23,7 +23,7 @@ npm install
 ```
 ### 3. Download the script
 ```
-wget https://raw.githubusercontent.com/yourname/zkey-verifier/main/verify.sh
+wget https://raw.githubusercontent.com/AdityaNarayan02/eth-v1-verification/main/verify.sh
 chmod +x verify.sh
 ```
 ### 4. Run the verification Script
