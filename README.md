@@ -23,7 +23,7 @@ npm install
 ```
 ### 3. Download the script
 ```
-wget https://raw.githubusercontent.com/AdityaNarayan02/eth-v1-verification/main/verify.sh
+wget https://github.com/AdityaNarayan02/ethstorage-v1-verification/blob/246592f276b645f2f892c6642edc0673641ae478/verify.sh
 chmod +x verify.sh
 ```
 ### 4. Run the verification Script
