@@ -10,7 +10,11 @@ You don’t need prior zk-SNARK knowledge — just follow along!
 ### 1. Install Tools
 ```bash
 sudo apt update && sudo apt install nodejs npm wget git -y
-npm install -g snarkjs@0.7.5
+sudo npm install -g snarkjs@0.7.5
+```
+```
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+source ~/.cargo/env
 ```
 ```
 git clone https://github.com/iden3/circom.git
@@ -22,6 +26,9 @@ cargo build --release
 ```
 ```
 sudo cp ./target/release/circom /usr/local/bin/
+```
+```
+cd ~
 ```
 
 ### 2. Clone the Circuits Repository
