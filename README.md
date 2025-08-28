@@ -11,8 +11,19 @@ You don’t need prior zk-SNARK knowledge — just follow along!
 ```bash
 sudo apt update && sudo apt install nodejs npm wget git -y
 npm install -g snarkjs@0.7.5
-npm install -g circom@2.2.2
 ```
+```
+git clone https://github.com/iden3/circom.git
+cd circom && git checkout v2.2.2
+cargo build --release
+```
+```
+./target/release/circom --version
+```
+```
+sudo cp ./target/release/circom /usr/local/bin/
+```
+
 ### 2. Clone the Circuits Repository
 ```
 git clone https://github.com/ethstorage/zk-decoder.git
