@@ -1,3 +1,26 @@
+# EthStorage V1 Trusted Setup
+
+This repository provides an easy step-by-step guide and script to **verify the EthStorage V1 Trusted Setup Ceremony**.  
+You don’t need prior zk-SNARK knowledge — just follow along!
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install Tools
+```bash
+sudo apt update && sudo apt install nodejs npm wget git -y
+npm install -g snarkjs@0.7.5
+npm install -g circom@2.2.2
+```
+### 2. Clone the Circuits Repository
+```
+git clone https://github.com/ethstorage/zk-decoder.git
+cd zk-decoder/circom/circuits
+npm install
+```
+### 3. Create a Script File
+```
 #!/bin/bash
 set -e
 
@@ -174,3 +197,17 @@ print_status "   - Circuit hashes verified"
 print_status "   - Final zkey files downloaded and verified"
 print_status ""
 print_success "🔐 Your trusted setup verification is complete and secure!"
+```
+### 4. Run the script
+```
+chmod +x verify.sh
+./verify.sh
+```
+
+# You have sucessfully completed the task
+
+
+
+
+
+
