@@ -1,35 +1,3 @@
-# ethstorage-v1-verification
-
-# EthStorage V1 Trusted Setup Verification
-
-This repository provides an easy step-by-step guide and script to **verify the EthStorage V1 Trusted Setup Ceremony**.  
-You don’t need prior zk-SNARK knowledge — just follow along!
-
----
-
-## 🚀 Quick Start
-
-### 1. Install Tools
-```bash
-sudo apt update && sudo apt install nodejs npm wget git -y
-sudo npm install -g snarkjs@0.7.5
-```
-```
-wget https://github.com/iden3/circom/releases/download/v2.2.2/circom-linux-amd64 -O circom
-chmod +x circom
-sudo mv circom /usr/local/bin/
-```
-### 2. Clone the Circuits Repository
-```bash
-git clone https://github.com/ethstorage/zk-decoder.git
-cd zk-decoder/circom/circuits
-npm install
-```
-### 3. Make the script
-```
-nano verify.sh
-```
-```
 #!/bin/bash
 set -e
 
@@ -145,26 +113,24 @@ print_status "⬇️ Downloading Powers of Tau files..."
 download_file "https://hermez.s3-eu-west-1.amazonaws.com/ppot_0080_19.ptau" "ppot_0080_19.ptau" "Powers of Tau 19"
 download_file "https://hermez.s3-eu-west-1.amazonaws.com/ppot_0080_20.ptau" "ppot_0080_20.ptau" "Powers of Tau 20"
 
-# Check if circuit files exist
+# Download circuit files if they don't exist
 if [[ ! -f "blob_poseidon.circom" ]]; then
-    print_error "❌ blob_poseidon.circom not found in current directory"
-    print_error "Please ensure you're in the correct directory with the circuit files"
-    exit 1
+    print_status "⬇️ Downloading blob_poseidon.circom..."
+    download_file "https://raw.githubusercontent.com/ethstorage/zk-decoder/main/circom/circuits/blob_poseidon.circom" "blob_poseidon.circom" "blob_poseidon circuit"
 fi
 
 if [[ ! -f "blob_poseidon_2.circom" ]]; then
-    print_error "❌ blob_poseidon_2.circom not found in current directory"
-    print_error "Please ensure you're in the correct directory with the circuit files"
-    exit 1
+    print_status "⬇️ Downloading blob_poseidon_2.circom..."
+    download_file "https://raw.githubusercontent.com/ethstorage/zk-decoder/main/circom/circuits/blob_poseidon_2.circom" "blob_poseidon_2.circom" "blob_poseidon_2 circuit"
 fi
 
 # Compile circuits
 print_status "⚙️  Compiling circuits..."
 print_status "   Compiling blob_poseidon.circom..."
-circom ./blob_poseidon.circom --r1cs --O2
+circom ./blob_poseidon.circom --r1cs --O2 -l ./
 
 print_status "   Compiling blob_poseidon_2.circom..."
-circom ./blob_poseidon_2.circom --r1cs --O2
+circom ./blob_poseidon_2.circom --r1cs --O2 -l ./
 
 print_success "✅ Circuit compilation completed"
 
@@ -208,19 +174,3 @@ print_status "   - Circuit hashes verified"
 print_status "   - Final zkey files downloaded and verified"
 print_status ""
 print_success "🔐 Your trusted setup verification is complete and secure!"
-```
-```
-chmod +x verify.sh
-```
-### 4. Run the verification Script
-```
-./verify.sh
-```
-### 5. ✅ Expected Results
-At the end, you should see:
-```
-snarkJS: ZKey Ok!
-```
-for both circuits.
-
-That means you have independently verified the EthStorage Trusted Setup 🎉
