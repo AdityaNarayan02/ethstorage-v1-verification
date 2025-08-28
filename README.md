@@ -21,6 +21,9 @@ npm install
 ```
 ### 3. Create a Script File
 ```
+nano verify_local.sh
+```
+```
 #!/bin/bash
 set -e
 
@@ -100,8 +103,8 @@ echo "✅ Ceremony transcripts are valid and secure"
 ```
 ### 4. Run the script
 ```
-chmod +x verify.sh
-./verify.sh
+chmod +x verify_local.sh
+./verify_local.sh
 ```
 
 # You have sucessfully completed the task
